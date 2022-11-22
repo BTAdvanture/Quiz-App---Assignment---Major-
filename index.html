@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="home">
+        <div class="user-detail-sec">
+            <img src="testbook logo.png" alt="home-logo" class="home-logo">
+            <h1 class="greet">Hello User!</h1>
+            <h2 class="user-name">Enter your <span class="inner-user-name">name</span> to continue the Quiz.</h2>
+
+            <form action="" class="user-inp" name="welcome-form" onsubmit="submitForm(event)">
+                <input type="text" id="inp-text" name="name" placeholder="User Name...">
+                <input type="submit" value="Enter" id="user-name-btn">
+            </form>
+            <div class="notice">
+                <p class="notice-text">You Have <span class="notice-text-red"> 60 seconds </span> to answer all the
+                    questions.</p>
+            </div>
+        </div>
+        <div class="option-list hide">
+            <h1 class="category-info">Select Category</h1>
+            <div class="category">
+
+                <button id="c" class="home-btn" onclick="startCQuiz()">C</button>
+                <button id="html" class="home-btn" onclick="startHtmlQuiz()">HTML</button>
+                <button id="css" class="home-btn" onclick="startCssQuiz()">CSS</button>
+                <button id="js" class="home-btn" onclick="startJsQuiz()">JAVA SCRIPT</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="quiz-box hide">
+        <header class="header-sec">
+
+            <div class="timer">
+                <p class="time-text">Time <span id="timer">60</span></span></p>
+            </div>
+
+            <div class="topic-head">
+                <p class="name" id="topicName">C</p>
+            </div>
+            <div class="score">
+                <p class="score-text">Score <span id="scored-marks">0</span></p>
+            </div>
+            <div id="time-line"></div>
+        </header>
+        <section class="section1">
+            <div class="que-text" id="queText">
+                <span>Who is father of C language?</span>
+            </div>
+            <div class="ans-list">
+                <div class="options" id="answer1">
+                    <p id="ans1">Bjarne Stroustrup</p>
+
+                </div>
+                <div class="options" id="answer2">
+                    <p id="ans2">James A. Gosling</p>
+
+                </div>
+                <div class="options" id="answer3">
+                    <p id="ans3">Dennis Ritchie</p>
+
+                </div>
+                <div class="options" id="answer4">
+                    <p id="ans4">Dr. E.F. Codd</p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="foot-quiz hide">
+            <div class="next-btn">
+                <button id="next">Next Question</button>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <div class="result-page hide">
+        <div class="head">
+            <h1 class="heading">Quiz Result</h1>
+        </div>
+        <div class="timeOver"><span class="timeOver-text"></span></div>
+        <div class="scorecard">
+            <p class="show"><b><span id="result-name">XXX</span> your result is:</b></p>
+            <p class="show">Total time taken: <span id="time-taken"></span></p>
+            <p class="show">Total question: <span id="total-que">10</span></p>
+            <p class="show">Total question attempted: <span id="total-que-attempted"></span></p>
+            <p class="show">Correct: <span id="correct-ans">XXX</span></p>
+            <p class="show">Wrong: <span id="wrong-ans">XXX</span></p>
+            <p class="show">Percentage: <span id="percentage">XXX</span></p>
+        </div>
+        <div class="result-btn">
+            <button id="start-again" class="restart">Play Again</button>
+            <button id="go-to-home" class="home-btn-end" onclick="myHome()">Go to Home</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="question.js"></script>
+
+</body>
+
+</html>
